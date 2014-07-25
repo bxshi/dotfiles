@@ -7,10 +7,11 @@ call vundle#rc()
 "Vundle bundles
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'AnsiEsc.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'derekwyatt/vim-scala'
 
 "Workaround for enabling filetype
 filetype plugin on
@@ -26,6 +27,9 @@ set softtabstop=2
 set shiftwidth=2
 set noexpandtab
 set smartindent
+
+"Code reformat
+nmap <F5> :%!astyle --mode=c --style=linux -s2<CR>
 
 "Delete could delete old text
 set backspace=2
@@ -61,13 +65,14 @@ let NERDTreeShowHidden=1
 nmap <F8> :TagbarToggle<CR>
 
 "Syntastic Settings
-let g:syntastic_cpp_check_header=1
-let g:syntastic_cpp_no_include_search=1
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
+"let g:syntastic_cpp_check_header=1
+"let g:syntastic_cpp_no_include_search=1
+"let g:syntastic_check_on_open=1
+"let g:syntastic_enable_signs=1
+"let g:syntastic_cpp_checkers=['make', 'gcc']
+"let g:syntastic_cpp_include_dirs = [ '/home/bshi/graphlab/src' ]
 "Always show loc
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_cpp_checkers=['make']
+"let g:syntastic_always_populate_loc_list=1
 
 "YCM Settings
 "Set default YCM configuration file
@@ -77,7 +82,7 @@ set completeopt=longest,menu
 "Close completion window when leave insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "Enable label engine
-let g:ycm_collect_identifiers_from_tags_files=1
+"let g:ycm_collect_identifiers_from_tags_files=1
 "Start matching after 1 characters are typed
 let g:ycm_min_num_of_chars_for_completion=1
 "Enable cache matching
@@ -93,7 +98,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings=0
 "Auto trigger completion by -> and .
 let g:ycm_auto_trigger=1
 "Change the color to something nice
-highlight Pmenu ctermbg=white ctermfg=black cterm=bold
+highlight Pmenu ctermbg=brown gui=bold cterm=bold
 "Semantic triggers
 let g:ycm_semantic_triggers =  {
 \   'c' : ['->', '.'],
@@ -118,7 +123,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 "Highlight code exceeds 110 chars per line
 highlight OverLength ctermbg=darkgray guibg=#592929
-match OverLength /\%111v.\+/
+match OverLength /\%81v.\+/
 
 "Hightlight trick
 augroup project
