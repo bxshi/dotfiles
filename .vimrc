@@ -1,7 +1,7 @@
 "undle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 "Vundle bundles
@@ -82,7 +82,7 @@ set completeopt=longest,menu
 "Close completion window when leave insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "Enable label engine
-"let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_collect_identifiers_from_tags_files=0
 "Start matching after 1 characters are typed
 let g:ycm_min_num_of_chars_for_completion=1
 "Enable cache matching
@@ -132,5 +132,3 @@ augroup project
 	autocmd BufRead,BufNewFile *dox set filetype=doxygen
 augroup END
 
-"Search relative path in these path
-let &path.="/home/bshi/graphlab/src,/home/bshi/graphlab/src/graphlab,./,"
