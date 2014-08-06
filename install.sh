@@ -10,7 +10,7 @@ cd ~/.vim/bundle/
 git clone https://github.com/gmarik/Vundle.vim.git
 
 cd ~/
-ln -s $PWD/.vimrc ~/.vimrc
+ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
 
 echo "Start installing plugines..."
 vim +VundleInstall +qall
