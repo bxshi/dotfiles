@@ -18,6 +18,6 @@ vim +VundleInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 
-ln -s $PWD/.ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+ln -s $DOTFILES_DIR/.ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
 echo "Installation finished, enjoy :-)"
