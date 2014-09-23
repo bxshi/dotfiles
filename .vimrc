@@ -1,4 +1,11 @@
 "undle
+
+"Make sure scripts works with bash
+set shell=/bin/bash
+
+"Enable mouse
+set mouse=a
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
